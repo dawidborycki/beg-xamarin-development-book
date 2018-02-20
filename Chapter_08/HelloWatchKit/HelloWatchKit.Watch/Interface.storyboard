@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Label" id="39"/>
+                        <separator alignment="center" verticalAlignment="center" id="44"/>
+                        <button width="1" alignment="center" verticalAlignment="center" title="Pick a color" id="42">
+                            <connections>
+                                <action selector="ButtonInput_Activated" destination="AgC-eL-Hgc" id="45"/>
+                            </connections>
+                        </button>
+                        <label alignment="center" verticalAlignment="center" text="Label" id="43"/>
+                    </items>
+                    <menu key="menu" id="89">
+                        <items>
+                            <menuItem title="New York" icon="more" id="90">
+                                <connections>
+                                    <action selector="NewYorkItem_Tapped" destination="AgC-eL-Hgc" id="92"/>
+                                </connections>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </menuItem>
+                            <menuItem title="San Francisco" icon="maybe" id="91">
+                                <connections>
+                                    <action selector="SanFranciscoItem_Tapped" destination="AgC-eL-Hgc" id="93"/>
+                                </connections>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="ButtonInput" destination="42" id="name-outlet-42"/>
+                        <outlet property="LabelAnswer" destination="43" id="name-outlet-43"/>
+                        <outlet property="LabelTime" destination="39" id="name-outlet-39"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController">
+                    <items>
+                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="263"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" id="JfB-70-Muf">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                    </notificationCategory>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="231" y="0.0"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController"/>
+            </objects>
+            <point key="canvasLocation" x="462" y="0.0"/>
+        </scene>
+        <!--CityGeolocationController-->
+        <scene sceneID="40">
+            <objects>
+                <controller identifier="CityGeolocationController" id="41" customClass="CityGeolocationController">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Geolocation:" id="137"/>
+                        <label alignment="center" verticalAlignment="center" text="Label" id="138"/>
+                        <label alignment="center" verticalAlignment="center" text="Label" id="139"/>
+                    </items>
+                    <connections>
+                        <outlet property="LabelLat" destination="138" id="name-outlet-138"/>
+                        <outlet property="LabelLng" destination="139" id="name-outlet-139"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="56" y="-298"/>
+        </scene>
+    </scenes>
+</document>
