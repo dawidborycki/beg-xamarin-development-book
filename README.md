@@ -1,2 +1,3 @@
-# beg-xamarin-development-book
-Source code for my Apress book on Xamarin Development 
+## Info
+This repository contains the cource code for my [Apress book on Xamarin Development](https://www.apress.com/us/book/9781484231319)
+
